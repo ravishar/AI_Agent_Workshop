@@ -1,5 +1,7 @@
 # ACM San Francisco Bay Area AI Agent Workshop Setup Guide  
 
+Colab is available here: https://gist.github.com/marscod/9e1cd2dfd07d8448d52214a63851a394
+
 Follow these steps to set up your environment:  
 
 ## 1. Fork the Repository  
