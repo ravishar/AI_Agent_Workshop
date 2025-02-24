@@ -14,7 +14,7 @@ Choose your GitHub account to proceed.
 ## 4. Select a Deployment  
 A minimal resource allocation (e.g., 2 cores) is sufficient.  
 
-> ⚠️ **Note:** You may stop the server once you complete the task to avoid unnecessary charges, even if the server is idle.  
+> ⚠️ **Note:** You may stop the server once you complete the task to avoid unnecessary charges, even if the server is idle.  Open codespaces [https://github.com/codespaces](https://github.com/codespaces), select `...` for the code space and select `Stop`.
 
 ## 5. Wait for VS Code to Launch  
 The environment will open in Visual Studio Code and start installing Python automatically.  
