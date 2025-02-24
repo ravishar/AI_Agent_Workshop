@@ -2,36 +2,36 @@
 
 Follow these steps to set up your environment:  
 
-1. Fork the Repository  
-Click the fork button on GitHub to create your own copy of the repository.  
+## 1. Fork the Repository  
+Click the **Fork** button on GitHub to create your own copy of the repository.  
 
-2. Open the Forked Repository in GitHub Codespaces  
+## 2. Open the Forked Repository in GitHub Codespaces  
 Modify the URL by replacing `github.com` with `github.dev`.  
 
-3. Sign in to GitHub  
-Choose your GitHub account to proceed.  
+## 3. Sign in to GitHub  
+Sign in using your GitHub account to proceed.  
 
-4. Select a Deployment  
-A minimal resource allocation (e.g., 2 cores) is sufficient.  
+## 4. Select a Deployment  
+A minimal resource allocation (e.g., **2 cores**) is sufficient.  
 
-> ⚠️ **Note:** You may stop the server once you complete the task to avoid unnecessary charges, even if the server is idle.  Open codespaces [https://github.com/codespaces](https://github.com/codespaces), select `...` for the code space and select `Stop`.
+> ⚠️ **Note:** To avoid unnecessary charges, stop the server once you complete the task, even if it is idle.  
+> Open [GitHub Codespaces](https://github.com/codespaces), select `...` for the codespace, and choose **Stop**.  
 
-5. Wait for VS Code to Launch  
-The environment will open in Visual Studio Code and start installing Python automatically.  
+## 5. Wait for VS Code to Launch  
+The environment will open in **Visual Studio Code**, and Python installation will begin automatically.  
 
-6. Open the Terminal  
-Access the terminal from the VS Code interface.  
+## 6. Open the Terminal  
+Access the terminal from the **VS Code** interface.  
 
-7. Run the Required Commands  
-Follow the provided instructions in the repository to set up your environment.  
+## 7. Run the Required Commands  
+Follow the instructions in the repository to set up your environment.  
 
-## install Requirements
 ```bash
 ./setup.sh
-activate venv/bin/activate
+source venv/bin/activate
 ```
 
-## Run Server
+### Run Server
 ```bash
 ./run.sh
 ```
@@ -40,4 +40,4 @@ activate venv/bin/activate
 If needed, you can expose the port to the public, allowing others to access your server.  
 
 # Contribution
-Please feel free to contribute to this repository by submtting a new PR from your forked repo.
+We welcome contributions! Feel free to submit a Pull Request (PR) from your forked repository.
