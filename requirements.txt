@@ -1,0 +1,5 @@
+smolagents
+python-dotenv
+duckduckgo_search
+litellm
+streamlit
