@@ -1,1 +1,2 @@
-streamlit run main.py --server.address 0.0.0.0 --server.port 8000
+source venv/bin/activate
+streamlit run main.py
