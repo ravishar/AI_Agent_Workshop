@@ -1,5 +1,11 @@
 # ACM San Francisco Bay Area AI Agent Workshop Setup Guide  
 
+Hands-on Session Requirements:
+
+Today, we will utilize LLM via API by signing up for GROQ Inference (which offers a free trial) or XAI-Grok2 API (which provides a free tier in exchange for sharing content).
+Alternatively, you can run an LLM locally, but you'll also need to run the Colab Notebook locally. (Optional Tools: ollama, LLM Studio)
+
+
 Colab is available here: https://gist.github.com/marscod/9e1cd2dfd07d8448d52214a63851a394
 
 Follow these steps to set up your environment:  
