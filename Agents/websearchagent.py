@@ -59,7 +59,7 @@ class SearchAgent:
 
         """
         ## set ENV variables
-        assert host in ["groq", "xai"], "host must be either groq or grok"
+        assert host in ["groq", "xai", "cerebras"], "host must be either groq or grok"
         
 
         # You may set environment variables for API keys manually
@@ -71,7 +71,9 @@ class SearchAgent:
         elif host =="xai":
             self.model_name="xai/grok-2-latest"
             api_key = os.getenv("XAI_API_KEY")
-
+        elif host=="cerebras":
+            self.model_name="cerebras/llama-3.3-70b"
+            api_key = os.getenv("CEREBRAS_API_KEY")
         self.delay=delay
 
         # this is a test model
@@ -80,14 +82,6 @@ class SearchAgent:
             temperature=0.2,
             api_key=api_key
         )
-
-        response = completion(
-            model="groq/llama3-8b-8192",
-            messages=[
-            {"role": "user", "content": "This is a test message. Please repeat the same word."}
-        ],
-        )
-        print(response)
 
     def call(self, query, max_results=20):
         """Executes a search query using the CodeAgent with a custom delay callback.
@@ -140,8 +134,8 @@ class SearchAgent:
 
 if __name__=="__main__":
     # Initialize the SearchAgent
-    agent = SearchAgent(delay=5, host="groq")
-    agent.save("search_agent")
+    agent = SearchAgent(delay=5, host="cerebras")
+    #agent.save("search_agent")
 
     # Execute another search query
     agent.call("What is the weather in New York?")
