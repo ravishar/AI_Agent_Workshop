@@ -6,6 +6,26 @@ st.set_page_config(
     page_icon="src/acm_logo_tablet.png",
 )
 
+# Add custom CSS to handle overflow
+st.markdown("""
+<style>
+.stMarkdown {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+pre {
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+    overflow-x: auto !important;
+}
+code {
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
 # import the SearchAgent class from the Agents module
 from Agents.websearchagent import SearchAgent
 
