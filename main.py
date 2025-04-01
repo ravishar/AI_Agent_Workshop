@@ -2,7 +2,7 @@ import streamlit as st
 
 # Add an icon to the app
 st.set_page_config(
-    page_title="Agent Workshop",
+    page_title="AI Agent Workshop",
     page_icon="src/acm_logo_tablet.png",
 )
 
@@ -36,7 +36,7 @@ from Agents.websearchagent import SearchAgent
 # for the search
 # the SearchAgent also has a delay before making a request
 # to simulate the time taken to think
-st.markdown("# Welcome to Agent Workshop at ACM San Francisco Bay Area!\n\n")
+st.markdown("# Welcome to Agent Workshop!\n\n")
 st.markdown("## Search Agent\n")
 
 if 'input' not in st.session_state:
