@@ -1,4 +1,4 @@
-# ACM San Francisco Bay Area AI Agent Workshop Setup Guide  
+# AI Agent Workshop Setup Guide  
 
 Hands-on Session Requirements:
 
