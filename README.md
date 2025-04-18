@@ -1,4 +1,4 @@
-# ACM San Francisco Bay Area AI Agent Workshop Setup Guide  
+# AI Agent Workshop Setup Guide  
 
 Hands-on Session Requirements:
 
@@ -13,29 +13,38 @@ Follow these steps to set up your environment:
 ## 1. Fork the Repository  
 Click the **Fork** button on GitHub to create your own copy of the repository.  
 
-## 2. Open the Forked Repository in GitHub Codespaces  
+## 2. Get an API Key (XAI Grok2)
+1. Visit the [X.AI API Documentation](https://docs.x.ai/docs/overview) to obtain your API key.
+2. Use the provided [`.env_sample` file](https://github.com/marscod/AI_Agent_Workshop/blob/main/Agents/.env_sample) as a template to create your own `.env` file at `Agents/.env`.
+3. Add your API key(s) to the new `.env` file. You can leave the `GROQ_API_KEY` as is if you're using Grok2.
+```bash
+GROQ_API_KEY="YOUR GROQ KEY"
+XAI_API_KEY="YOUR XAI KEY"
+```
+
+## 3. Open the Forked Repository in GitHub Codespaces  
 Modify the URL by replacing `github.com` with `github.dev`.  
 
-## 3. Sign in to GitHub  
+## 4. Sign in to GitHub  
 Sign in using your GitHub account to proceed.  
 
-## 4. Select a Deployment  
+## 5. Select a Deployment  
 A minimal resource allocation (e.g., **2 cores**) is sufficient.  
 
 > ⚠️ **Note:** To avoid unnecessary charges, stop the server once you complete the task, even if it is idle.  
-> Open [GitHub Codespaces](https://github.com/codespaces), select `...` for the codespace, and choose **Stop**.  
+> Open [GitHub Codespaces](https://github.com/codespaces), select `...` for the codespace, and choose **Stop**.
 
-## 5. Wait for VS Code to Launch  
+## 6. Wait for VS Code to Launch  
 The environment will open in **Visual Studio Code**, and Python installation will begin automatically.  
 
-## 6. Open the Terminal  
+## 7. Open the Terminal  
 Access the terminal from the **VS Code** interface.  
 
-## 7. Run the Required Commands  
+## 8. Run the Required Commands  
 Follow the instructions in the repository to set up your environment.  
 
 ```bash
-./setup.sh
+./setup.sh 
 source venv/bin/activate
 ```
 
@@ -45,7 +54,7 @@ source venv/bin/activate
 ```
 
 8. (Optional) Make the Server Public  
-If needed, you can expose the port to the public, allowing others to access your server.  
+If needed, you can expose the port to the public, allowing others to access your AI Agent.  
 
 # Contribution
 We welcome contributions! Feel free to submit a Pull Request (PR) from your forked repository.
