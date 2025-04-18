@@ -44,8 +44,7 @@ if 'input' not in st.session_state:
 
 with st.form(key='search_form'):
     # Split the screen into 3 columns
-    col1, col2 = st.columns([10, 1])
-    
+    col1, col2, col3 = st.columns([10, 1,2])
     with col1:
         # st.write("") 
         input_query = st.text_input(">", value=st.session_state.input, key='input_query', label_visibility="collapsed")  
@@ -54,18 +53,27 @@ with st.form(key='search_form'):
         # st.write("")  # Spacer for alignment
         search_button = st.form_submit_button("🔍", use_container_width=True)
     
+    with col3:
+        # Select a host for the SearchAgent
+        host = st.selectbox("Select a host", ["xAI", "Groq", "Grok", "HF"], index=0, label_visibility="collapsed")
+        host = host.lower()
 
 if search_button:
     # create a SearchAgent instance with a delay of 0 seconds
     # the SearchAgent uses the "xai" host by default, you may update it to "groq" or "grok"
     # by setting the host parameter
-    agent=SearchAgent(delay=0)
+    agent=SearchAgent(host=host, delay=0)
 
     # show a progress bar
     updated_agent = None
     with st.spinner("Calling Agent...", show_time=True):
-        # call the SearchAgent with the input query
-        updated_agent = agent.call(query= st.session_state.input_query)
+        try:
+            # call the SearchAgent with the input query
+            updated_agent = agent.call(query= st.session_state.input_query)
+        except Exception as e:
+            # display an error message if there is an exception
+            st.toast(f"API Provider is not available. Check API key.")
+            updated_agent = None
 
     # display the search results
     for i, step in enumerate(updated_agent.memory.steps):

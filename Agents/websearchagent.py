@@ -1,8 +1,7 @@
 from litellm import completion
 import os
-from smolagents import CodeAgent, DuckDuckGoSearchTool, LiteLLMModel
+from smolagents import CodeAgent, DuckDuckGoSearchTool, LiteLLMModel, InferenceClientModel
 from huggingface_hub import login, InferenceClient
-#from asyncio import sleep
 from time import sleep
 import litellm
 from tqdm import tqdm
@@ -59,7 +58,6 @@ class SearchAgent:
 
         """
         ## set ENV variables
-        assert host in ["groq", "xai", "cerebras"], "host must be either groq or grok"
         
 
         # You may set environment variables for API keys manually
@@ -74,14 +72,20 @@ class SearchAgent:
         elif host=="cerebras":
             self.model_name="cerebras/llama-3.3-70b"
             api_key = os.getenv("CEREBRAS_API_KEY")
+        elif host=="hf":
+            self.model_name = os.getenv("HF_API")
+        else:
+            raise AssertionError("Invalid host")
         self.delay=delay
 
-        # this is a test model
-        self.model = LiteLLMModel(
-            self.model_name,
-            temperature=0.2,
-            api_key=api_key
-        )
+        if host=="hf":
+           self.model= InferenceClientModel(self.model_name)
+        else:
+            self.model = LiteLLMModel(
+                self.model_name,
+                temperature=0.2,
+                api_key=api_key
+            )
 
     def call(self, query, max_results=20):
         """Executes a search query using the CodeAgent with a custom delay callback.
